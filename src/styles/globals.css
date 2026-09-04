@@ -1,0 +1,11 @@
+@import "./variables.css";
+@import "./reset.css";
+@import "./typography.css";
+
+body{
+    background:var(--color-background);
+}
+
+#root{
+    min-height:100vh;
+}

@@ -1,0 +1,50 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.icon {
+  font-size: 2.8rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.text h1 {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.text p {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.sm .icon {
+  font-size: 2rem;
+}
+
+.sm .text h1 {
+  font-size: 1.5rem;
+}
+
+.md .icon {
+  font-size: 2.8rem;
+}
+
+.md .text h1 {
+  font-size: 2rem;
+}
+
+.lg .icon {
+  font-size: 3.6rem;
+}
+
+.lg .text h1 {
+  font-size: 2.8rem;
+}

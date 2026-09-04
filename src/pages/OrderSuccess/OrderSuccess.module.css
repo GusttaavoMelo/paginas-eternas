@@ -1,0 +1,140 @@
+.page {
+    min-height: calc(100vh - 100px);
+    padding: 64px 20px;
+    background: var(--color-background);
+}
+
+.container {
+    width: min(620px, 100%);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.eyebrow {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--color-secondary);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.container h1 {
+    margin: 0;
+    color: var(--color-primary);
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.description {
+    margin: 16px auto 32px;
+    max-width: 500px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.card {
+    padding: 28px;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    background: white;
+    text-align: left;
+}
+
+.orderNumber {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.orderNumber span {
+    color: #666;
+    font-size: 14px;
+}
+
+.orderNumber strong {
+    color: var(--color-primary);
+    font-size: 16px;
+}
+
+.divider {
+    height: 1px;
+    margin: 24px 0;
+    background: var(--color-border);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    color: #666;
+    font-size: 14px;
+}
+
+.row:first-of-type {
+    margin-top: 0;
+}
+
+.row strong {
+    color: var(--color-primary);
+    font-size: 16px;
+}
+
+.actions {
+    margin-top: 28px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 20px;
+    border-radius: 8px;
+    background: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background: var(--color-secondary);
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 40px 16px;
+    }
+
+    .container h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .orderNumber {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+    }
+}

@@ -1,0 +1,251 @@
+.card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+
+    background: #fff;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.coverWrapper {
+    position: relative;
+
+    aspect-ratio: 3 / 4;
+
+    overflow: hidden;
+
+    background: #f5f5f5;
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.3s ease;
+}
+
+.card:hover .cover {
+    transform: scale(1.03);
+}
+
+.badges {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.badges span {
+    width: fit-content;
+
+    padding: 5px 8px;
+
+    border-radius: 6px;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.newBadge {
+    background: #222;
+    color: #fff;
+}
+
+.bestsellerBadge {
+    background: #fff;
+    color: #222;
+
+    border: 1px solid #ddd;
+}
+
+.discountBadge {
+    background: #b42318;
+    color: #fff;
+}
+
+.favorite {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #444;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.favoriteActive {
+    color: #b42318;
+}
+
+.favorite:hover {
+    transform: scale(1.08);
+
+    color: #b42318;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+
+    padding: 18px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-bottom: 8px;
+
+    color: #b7791f;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.reviews {
+    color: #777;
+
+    font-weight: 400;
+}
+
+.title {
+    margin: 0 0 6px;
+
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+.author {
+    margin: 0 0 14px;
+
+    color: #666;
+
+    font-size: 0.9rem;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    margin-bottom: 6px;
+}
+
+.price strong {
+    font-size: 1.25rem;
+}
+
+.oldPrice {
+    color: #999;
+
+    font-size: 0.85rem;
+
+    text-decoration: line-through;
+}
+
+.stock {
+    margin-bottom: 14px;
+
+    font-size: 0.8rem;
+}
+
+.stock span {
+    color: #3d7a4a;
+}
+
+.buy {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 11px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #222;
+    color: #fff;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.buy:hover:not(:disabled) {
+    transform: translateY(-1px);
+
+    opacity: 0.9;
+}
+
+.buy:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+.coverLink {
+    display: block;
+}
+
+.titleLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.titleLink:hover .title {
+    text-decoration: underline;
+}

@@ -1,0 +1,70 @@
+.hero {
+    width: 100%;
+    padding: 80px 24px;
+    background: var(--color-primary);
+}
+
+.content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: rgb(204, 188, 181);
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.content h1 {
+    max-width: 750px;
+    margin: 0;
+
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.05;
+}
+
+.content h1 span {
+    display: block;
+}
+
+.content p {
+    max-width: 600px;
+    margin: 24px 0 32px;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 22px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.primaryButton {
+    background: white;
+    color: var(--color-primary);
+}
+
+.secondaryButton {
+    border: 1px solid currentColor;
+    color: inherit;
+}

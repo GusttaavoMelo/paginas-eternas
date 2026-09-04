@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.container select {
+    padding: 10px 14px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    background: #fff;
+
+    font-size: 0.9rem;
+
+    cursor: pointer;
+}
