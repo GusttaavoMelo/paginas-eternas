@@ -18,6 +18,7 @@ import { OrderSuccess } from "../pages/OrderSuccess/OrderSuccess";
 import { Login } from "../pages/Login/Login";
 import { Register } from "../pages/Register/Register";
 import { ProtectedRoute } from "./ProtectedRoute";
+import { Account } from "../pages/Account/Account";
 
 export function AppRoutes() {
     return (
@@ -56,6 +57,11 @@ export function AppRoutes() {
                     <Route
                         path="/checkout"
                         element={<Checkout />}
+                    />
+
+                    <Route
+                        path="/account"
+                        element={<Account />}
                     />
                 </Route>
 

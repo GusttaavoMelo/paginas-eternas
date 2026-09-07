@@ -91,14 +91,13 @@ export function Header() {
 
             {isAuthenticated ? (
               <>
-                <span
-                  className={
-                    styles.userName
-                  }
+                <Link
+                  to="/account"
+                  className={styles.userName}
                 >
                   Olá,{" "}
                   {user?.name}
-                </span>
+                </Link>
 
                 <button
                   type="button"
