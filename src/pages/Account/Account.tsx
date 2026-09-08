@@ -54,16 +54,32 @@ export function Account() {
                 </header>
 
                 <section className={styles.profile}>
-                    <div className={styles.avatar}>
-                        <User size={32} />
+                    <div className={styles.profileHeader}>
+                        <h2>Meus dados</h2>
+                        <p>Informações da sua conta</p>
                     </div>
 
-                    <div className={styles.info}>
-                        <h2>{user.name}</h2>
+                    <div className={styles.profileContent}>
+                        <div className={styles.avatar}>
+                            <User size={32} />
+                        </div>
 
-                        <div className={styles.email}>
-                            <Mail size={16} />
-                            <span>{user.email}</span>
+                        <div className={styles.info}>
+                            <div className={styles.field}>
+                                <span className={styles.label}>Nome</span>
+                                <span className={styles.value}>
+                                    {user.name}
+                                </span>
+                            </div>
+
+                            <div className={styles.field}>
+                                <span className={styles.label}>E-mail</span>
+
+                                <div className={styles.email}>
+                                    <Mail size={16} />
+                                    <span>{user.email}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
