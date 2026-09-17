@@ -18,4 +18,8 @@ export interface AuthContextData {
         password: string
     ) => boolean;
     logout: () => void;
+    updateUser: (
+        name: string,
+        email: string
+    ) => void;
 }

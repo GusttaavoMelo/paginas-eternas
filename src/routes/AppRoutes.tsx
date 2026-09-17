@@ -19,6 +19,7 @@ import { Login } from "../pages/Login/Login";
 import { Register } from "../pages/Register/Register";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { Account } from "../pages/Account/Account";
+import { OrderDetails } from "../pages/OrderDetails/OrderDetails";
 
 export function AppRoutes() {
     return (
@@ -62,6 +63,11 @@ export function AppRoutes() {
                     <Route
                         path="/account"
                         element={<Account />}
+                    />
+
+                    <Route
+                        path="/account/orders/:id"
+                        element={<OrderDetails />}
                     />
                 </Route>
 

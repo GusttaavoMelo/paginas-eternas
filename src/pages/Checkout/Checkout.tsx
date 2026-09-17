@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import type { Order } from "../../types/Order/Order.types";
 import {
     ArrowLeft,
     CreditCard,
@@ -13,6 +14,7 @@ import {
 import { z } from "zod";
 
 import { useCart } from "../../contexts/CartContext/CartContext";
+import { useAuth } from "../../contexts/AuthContext/AuthContext";
 
 import styles from "./Checkout.module.css";
 
@@ -76,6 +78,8 @@ export function Checkout() {
         clearCart,
     } = useCart();
 
+    const { user } = useAuth();
+
     const navigate = useNavigate();
 
     const totalItems = getTotalItems();
@@ -96,12 +100,53 @@ export function Checkout() {
     const onSubmit = (
         data: CheckoutFormData
     ) => {
-        console.log("Pedido:", data);
-        console.log("Itens:", cartItems);
-
         const orderNumber = `PE-${Date.now()
             .toString()
             .slice(-8)}`;
+
+        const order: Order = {
+            id: crypto.randomUUID(),
+            userId: user?.id ?? 0,
+            orderNumber,
+            status: "confirmed",
+            customerName: data.name,
+            customerEmail: data.email,
+            cpf: data.cpf,
+            phone: data.phone,
+            address: {
+                cep: data.cep,
+                street: data.street,
+                number: data.number,
+                complement: data.complement,
+                city: data.city,
+                state: data.state,
+            },
+            payment: data.payment,
+            items: cartItems.map((item) => ({
+                bookId: item.book.id,
+                title: item.book.title,
+                cover: item.book.cover,
+                price: item.book.price,
+                quantity: item.quantity,
+            })),
+            totalItems,
+            totalPrice,
+            createdAt: new Date().toISOString(),
+        };
+
+        const storedOrders =
+            localStorage.getItem("paginas-eternas-orders");
+
+        const orders: Order[] = storedOrders
+            ? JSON.parse(storedOrders)
+            : [];
+
+        orders.push(order);
+
+        localStorage.setItem(
+            "paginas-eternas-orders",
+            JSON.stringify(orders)
+        );
 
         clearCart();
 
@@ -606,7 +651,7 @@ export function Checkout() {
                                                 item.book
                                                     .cover
                                             }
-                                            alt={`Capa do livro ${ item.book.title } `}
+                                            alt={`Capa do livro ${item.book.title} `}
                                         />
 
                                         <div>
@@ -623,7 +668,7 @@ export function Checkout() {
                                                     item.quantity
                                                 }{" "}
                                                 {item.quantity ===
-                                                1
+                                                    1
                                                     ? "unidade"
                                                     : "unidades"}
                                             </span>

@@ -127,6 +127,43 @@ export function AuthProvider({
         );
     };
 
+    const updateUser = (
+        name: string,
+        email: string
+    ) => {
+        if (!user) {
+            return;
+        }
+
+        const updatedUser: User = {
+            ...user,
+            name,
+            email,
+        };
+
+        const storedUsers = localStorage.getItem(
+            "paginas-eternas-users"
+        );
+
+        const users: User[] = storedUsers
+            ? JSON.parse(storedUsers)
+            : [];
+
+        const updatedUsers = users.map(
+            (item) =>
+                item.id === user.id
+                    ? updatedUser
+                    : item
+        );
+
+        localStorage.setItem(
+            "paginas-eternas-users",
+            JSON.stringify(updatedUsers)
+        );
+
+        setUser(updatedUser);
+    };
+
     useEffect(() => {
         if (user) {
             localStorage.setItem(
@@ -145,6 +182,7 @@ export function AuthProvider({
                 register,
                 login,
                 logout,
+                updateUser,
             }}
         >
             {children}
